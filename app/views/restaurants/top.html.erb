@@ -1,0 +1,14 @@
+<h1>Top 5⭐ Restaurants</h1>
+
+<ul>
+    <% @restaurants.each do |restaurant| %>
+  <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      <%= restaurant.address %>
+      <%= "⭐" * restaurant.stars %>
+    <% end %>
+  </li>
+</ul>
+
+<br/>
+<%= link_to "Home", restaurants_path %>

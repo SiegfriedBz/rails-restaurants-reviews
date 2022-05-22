@@ -1,0 +1,17 @@
+<h1>Restaurants</h1>
+
+<%= link_to "Create new Restaurant", new_restaurant_path %>
+<br/>
+<%= link_to "Top 5⭐ Restaurants", top_restaurants_path %>
+<br/>
+<br/>
+
+<ul>
+    <% @restaurants.each do |restaurant| %>
+  <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+      <%= restaurant.address %>
+      <%= "⭐" * restaurant.stars %>
+    <% end %>
+  </li>
+</ul>
